@@ -86,6 +86,16 @@ namespace Puzzles
             Console.WriteLine("Ratio: "+ ratio);
             return ratio;
         }
+        //         Names
+        // Build a function Names that returns a list of strings.  In this function:
+
+        // Create a list with the values: Todd, Tiffany, Charlie, Geneva, Sydney
+        // Shuffle the list and print the values in the new order
+        // Return a list that only includes names longer than 5 characters
+        static string[] Names()
+        {
+            
+        }
 
 
         static void Main(string[] args)
@@ -96,7 +106,7 @@ namespace Puzzles
                 Console.Write(item+", "); 
             }
             Tosscoin();
-            TossMultipleCoins(3);
+            TossMultipleCoins(10);
         }
     }
 }
