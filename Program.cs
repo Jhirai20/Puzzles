@@ -53,9 +53,8 @@ namespace Puzzles
         {
             Console.WriteLine("Tossing a Coin!");
             var rand = new Random();
-            int num = rand.Next(0,1);
-            Console.WriteLine(num);
-            if (num ==0) 
+            int num = rand.Next(0,2);
+            if (num ==1) 
             {
                 Console.WriteLine("Heads");
                 return "Heads";
@@ -69,7 +68,23 @@ namespace Puzzles
 
         static double TossMultipleCoins(int num)
         {
-            
+            double heads = 0;
+            double tails = 0;
+            for (int i=num;i>0;i--)
+            {
+                var coin = Tosscoin();
+                if (coin=="Heads")
+                {
+                    heads++;
+                }
+                if (coin=="Tails")
+                {
+                    tails++;
+                }
+            }
+            double ratio=(heads/num); 
+            Console.WriteLine("Ratio: "+ ratio);
+            return ratio;
         }
 
 
@@ -81,6 +96,7 @@ namespace Puzzles
                 Console.Write(item+", "); 
             }
             Tosscoin();
+            TossMultipleCoins(3);
         }
     }
 }
