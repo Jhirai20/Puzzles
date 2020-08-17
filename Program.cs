@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Puzzles
 {
@@ -92,9 +93,30 @@ namespace Puzzles
         // Create a list with the values: Todd, Tiffany, Charlie, Geneva, Sydney
         // Shuffle the list and print the values in the new order
         // Return a list that only includes names longer than 5 characters
-        static string[] Names()
+        static List<string> Names()
         {
-            
+            String[]names={"Todd","Tiffany", "Charlie","Geneva","Sydney"};
+            Random random=new Random();
+            int i =0;
+            while(i<names.Length)
+            {
+                int ind=random.Next(names.Length);
+                string tmp=names[ind];
+                names[ind]=names[i];
+                names[i]=tmp;
+                i++;
+            }
+            List<string> Names = new List<string>();
+            // Names.AddRange(names);
+            foreach (var name in names)
+            {
+                if(name.Length>5)
+                {
+                    Names.Add(name);
+                    Console.WriteLine(name);
+                }
+            }
+            return Names; 
         }
 
 
@@ -107,6 +129,7 @@ namespace Puzzles
             }
             Tosscoin();
             TossMultipleCoins(10);
+            Names();
         }
     }
 }
